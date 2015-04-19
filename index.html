@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy or Sad?</title>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="js/happyOrSad.js"></script>
+</head>
+<body ng-app="happyOrSad">
+
+<container ng-controller="mainController">
+  <form name="getText">
+      <input type="text" class="text" ng-model='getUserInput.text' placeholder='Enter text' />
+      <span>
+        <input type="submit" ng-click="addStandardizedText()">
+      </span>
+  </form>
+<span class="result">{{calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))}}</span>
+</body>
+</html>
