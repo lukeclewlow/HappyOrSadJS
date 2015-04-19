@@ -5,16 +5,19 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="js/happyOrSad.js"></script>
+<link rel="stylesheet" href="app/css/index.css">
 </head>
 <body ng-app="happyOrSad">
 
 <container ng-controller="mainController">
   <form name="getText">
-      <input type="text" class="text" ng-model='getUserInput.text' placeholder='Enter text' />
-      <span>
-        <input type="submit" ng-click="addStandardizedText()">
-      </span>
+    <input type="text" class="text" ng-model='getUserInput.text' placeholder='Enter text' />
   </form>
 <span class="result">{{calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))}}</span>
+<span class="result">{{calc.ratio(getUserInput.standardizeText(getUserInput.text))}}</span>
+<div id="cf">
+  <img class="bottom" src="/public/rain.jpg" />
+  <img class="top" style="opacity:{{calc.ratio(getUserInput.standardizeText(getUserInput.text))}}" src="/public/sun.jpg" />
+</div>
 </body>
 </html>

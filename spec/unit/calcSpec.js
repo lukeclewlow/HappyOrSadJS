@@ -32,7 +32,7 @@ describe('calcSpec', function() {
 
   describe('can tell whether the text is happy or sad', function() {
     it('can tell if a text has 50% more happy than sad words', function() {
-      expect(scope.calc.happyOrSad(["sad", "sorrow", "delight", "happy", "delighted"])).toEqual("Happy");
+      expect(scope.calc.happyOrSad(["sad", "delight", "happy", "delighted"])).toEqual("Happy");
     });
 
     it('can tell if a text has 50% more sad than happy words', function() {
@@ -44,7 +44,7 @@ describe('calcSpec', function() {
     });
 
     it('can tell us if a text is happy', function() {
-      expect(scope.calc.isHappy(["sad", "sorrow", "delight", "happy", "delighted"])).toBe(true);
+      expect(scope.calc.isHappy(["sad", "delight", "happy", "delighted"])).toBe(true);
     });
 
     it('can tell us if a text is sad', function() {

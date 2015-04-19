@@ -1,12 +1,12 @@
-var hos = angular.module('happyOrSad', []);
+var app = angular.module('happyOrSad', []);
 
-hos.controller('mainController', ['$scope', 'getUserInput', 'calc', function($scope, getUserInput, calc){
+app.controller('mainController', ['$scope', 'getUserInput', 'calc', function($scope, getUserInput, calc){
 	self = $scope
 	self.getUserInput = getUserInput;
 	self.calc = calc;
 }]);
 
-hos.service('getUserInput', function(){
+app.service('getUserInput', function(){
 	var self = this;
 	self.text;
 
@@ -35,7 +35,7 @@ hos.service('getUserInput', function(){
 	};
 });
 
-hos.service('calc', function(){
+app.service('calc', function(){
 	var self = this;
 	self.sadWords = ["disappointed", "miserable", "sad", "sorrow", "unhappy"];
 	self.happyWords = ["delight", "delighted", "delightful", "happy", "glad", "joy", "joyful", "merry", "pleasant"]
@@ -57,7 +57,10 @@ hos.service('calc', function(){
 	};
 
 	self.happyOrSad = function(text){
-		if(self.totalWordCount(text, self.happyWords) >= (self.totalWordCount(text, self.sadWords)*1.5)) {
+		if(self.totalWordCount(text, self.happyWords) == self.totalWordCount(text, self.sadWords)) {
+			return "Unknown";
+		}
+		else if(self.totalWordCount(text, self.happyWords) >= (self.totalWordCount(text, self.sadWords)*1.5)) {
 			return "Happy";
 		}
 		else if(self.totalWordCount(text, self.sadWords) >= (self.totalWordCount(text, self.happyWords)*1.5)) {
@@ -76,5 +79,9 @@ hos.service('calc', function(){
 		if(self.happyOrSad(text) == "Sad"){
 			return true;
 		};
+	};
+
+	self.ratio = function(text){
+		return self.totalWordCount(text, self.happyWords) / (self.totalWordCount(text, self.sadWords)+self.totalWordCount(text, self.happyWords))
 	};
 });
