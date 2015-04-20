@@ -3,14 +3,14 @@ var app = angular.module('happyOrSad');
 app.service('calc', function() {
 	var self = this;
 	self.sadWords = ["disappointed", "miserable", "sad", "sorrow", "unhappy"];
-	self.happyWords = ["delight", "delighted", "delightful", "happy", "glad", "joy", "joyful", "merry", "pleasant"]
+	self.happyWords = ["delight", "delighted", "delightful", "happy", "glad", "joy", "joyful", "merry", "pleasant"];
 
 	self.individualWordCount = function(text, identifier) {
 		var count = 0;
 		_.each(text, function(word) {
 			if(word == identifier) count++;
 		});
-		return count
+		return count;
 	};
 
 	self.totalWordCount = function(text, listOfWords) {
@@ -32,12 +32,12 @@ app.service('calc', function() {
 			return "Sad";
 		}
 		else { 
-			return "Unknown" 
-		};
+			return "Unknown";
+		}
 	};
 
 	self.ratio = function(text) {
-		return self.totalWordCount(text, self.happyWords) / (self.totalWordCount(text, self.sadWords)+self.totalWordCount(text, self.happyWords))
+		return self.totalWordCount(text, self.happyWords) / (self.totalWordCount(text, self.sadWords)+self.totalWordCount(text, self.happyWords));
 	};
 
 	self.opacityRatio = function(text){
@@ -46,6 +46,6 @@ app.service('calc', function() {
 		}
 		else { 
 			return self.ratio(text);
-		};
+		}
 	};
 });

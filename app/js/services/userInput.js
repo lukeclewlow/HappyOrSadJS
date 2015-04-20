@@ -2,7 +2,7 @@ var app = angular.module('happyOrSad');
 
 app.service('getUserInput', function() {
 	var self = this;
-	self.text;
+	self.text = "";
 
 	self.add = function(text) {
 		self.text = text;

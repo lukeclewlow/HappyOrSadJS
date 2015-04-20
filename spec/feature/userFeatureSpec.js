@@ -22,7 +22,7 @@ describe('user visiting the homepage: ', function() {
 	it('can see the word Sad when the text is sad', function() {
 		element(by.css('.text')).sendKeys("I'm so miserable this is sad not happy");
 		element(by.css('.result')).getText().then(function(name) {
-			expect(name).toBe('Sad');	
+			expect(name).toBe('Sad');
 		});
 	});
 
@@ -41,5 +41,11 @@ describe('user visiting the homepage: ', function() {
 		element(by.css('.text')).sendKeys("Happy");
 		browser.sleep(1200) 
 		expect(element(by.css('.top')).getCssValue('opacity')).toEqual('1');
+	});
+
+		it('the picture looks entirely rainy if the ratio for sad is 100%', function() {
+		element(by.css('.text')).sendKeys("Sad");
+		browser.sleep(2000) 
+		expect(element(by.css('.top')).getCssValue('opacity')).toEqual('0');
 	});
 });

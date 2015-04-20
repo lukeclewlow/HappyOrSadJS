@@ -1,21 +1,28 @@
 body {
-	
+	text-align: center;
 }
 
 img {
   opacity: 0.5;
 }
 
+h2 {
+  padding-bottom: 2%;
+}
+
+form, p {
+  text-align: center;
+}
+
 #cf {
   position:relative;
-  height:100px;
-  width:100px;
+
 }
 
 #cf img {
   position:absolute;
-  left:0;
-  top:0;
+  left:30%;
+  top:20%;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
