@@ -2,27 +2,30 @@
 <html>
 <head>
 	<title>Happy or Sad?</title>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/underscore/underscore.js"></script>
-<script src="app/js/app.js"></script>
-<script src="app/js/controllers.js"></script>
-<script src="app/js/services/calc.js"></script>
-<script src="app/js/services/userInput.js"></script>
-<link rel="stylesheet" href="app/css/index.css">
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="app/js/app.js"></script>
+	<script src="app/js/controllers.js"></script>
+	<script src="app/js/services/calc.js"></script>
+	<script src="app/js/services/userInput.js"></script>
+	<link rel="stylesheet" href="app/css/index.css">
 </head>
 <body ng-app="happyOrSad">
 
 <container ng-controller="mainController">
+
   <form name="getText">
     <input type="text" class="text" ng-model='getUserInput.text' placeholder='Enter text' />
   </form>
 
-<p class="result" ng-bind="calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))"></p>
-<p class="result" ng-bind="calc.opacityRatio(getUserInput.standardizeText(getUserInput.text))"></p>
-<div id="cf">
-  <img class="bottom" src="/public/rain.jpg" />
-  <img class="top" style="opacity:{{calc.opacityRatio(getUserInput.standardizeText(getUserInput.text))}}" src="/public/sun.jpg" />
-</div>
+	<p class="result" ng-bind="calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))"></p>
+
+	<div id="cf">
+	  <img class="bottom" src="/public/rain.jpg" />
+	  <img class="top" style="opacity:{{calc.opacityRatio(getUserInput.standardizeText(getUserInput.text))}}" src="/public/sun.jpg" />
+	</div>
+
 </container>
+
 </body>
 </html>

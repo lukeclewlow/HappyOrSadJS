@@ -31,18 +31,8 @@ app.service('calc', function() {
 		else if(self.totalWordCount(text, self.sadWords) >= (self.totalWordCount(text, self.happyWords)*1.5)) {
 			return "Sad";
 		}
-		else { return "Unknown" };
-	};
-
-	self.isHappy = function(text) {
-		if(self.happyOrSad(text) == "Happy") {
-			return true;
-		};
-	};
-
-	self.isSad = function(text) {
-		if(self.happyOrSad(text) == "Sad") {
-			return true;
+		else { 
+			return "Unknown" 
 		};
 	};
 
