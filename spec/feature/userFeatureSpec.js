@@ -4,7 +4,6 @@ describe('user visiting the homepage: ', function(){
 
 	beforeEach(function(){
 		browser.get('/');
-		// ptor = protractor.getInstance();
 	});
 
 	it('can see the page title', function(){

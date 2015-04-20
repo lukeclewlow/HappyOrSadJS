@@ -19,7 +19,7 @@ describe('userInputSpec', function() {
 		expect(scope.getUserInput.text).toEqual("I am text");
 	});
 
-	it('should be able to remove punctuation from the text', function() {
+	it('should be able to remove punctuation and any left over double spaces from the text', function() {
 		expect(scope.getUserInput.removePunctuation("This., -/ is #! an $ % ^ & * example ;: {} of a = -_ string with `~)() punctuation")).toEqual("This is an example of a string with punctuation");
 	});
 

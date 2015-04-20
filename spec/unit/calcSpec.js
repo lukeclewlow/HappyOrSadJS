@@ -21,7 +21,7 @@ describe('calcSpec', function() {
   });
 
   describe('it can calculate counts of different words', function() {
-  	it('knows how many times an array of text includes a particular happy or sad word', function() {
+  	it('knows how many times an array of text includes a particular word', function() {
   		expect(scope.calc.individualWordCount(["happy", "happy", "delighted"], "happy")).toEqual(2);
   	});
 
@@ -43,12 +43,12 @@ describe('calcSpec', function() {
       expect(scope.calc.happyOrSad(["sad", "sorrow", "happy", "delighted"])).toEqual("Unknown");
     });
 
-    it('can tell us if a text is happy', function() {
-      expect(scope.calc.isHappy(["sad", "delight", "happy", "delighted"])).toBe(true);
+    it('can give us a ratio calculation of happy to sad', function() {
+      expect(scope.calc.ratio(["sad", "sorrow", "unhappy", "happy"])).toEqual(0.25 )
     });
 
-    it('can tell us if a text is sad', function() {
-      expect(scope.calc.isSad(["sad", "sorrow", "unhappy", "happy"])).toBe(true);
+    it('defaults to a ratio of 0.5 if no data is given', function() {
+      expect(scope.calc.opacityRatio([""])).toEqual(0.5);
     });
   });
 });

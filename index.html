@@ -16,11 +16,13 @@
   <form name="getText">
     <input type="text" class="text" ng-model='getUserInput.text' placeholder='Enter text' />
   </form>
-<span class="result">{{calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))}}</span>
-<span class="result">{{calc.ratio(getUserInput.standardizeText(getUserInput.text))}}</span>
+
+<p class="result" ng-bind="calc.happyOrSad(getUserInput.standardizeText(getUserInput.text))"></p>
+<p class="result" ng-bind="calc.opacityRatio(getUserInput.standardizeText(getUserInput.text))"></p>
 <div id="cf">
   <img class="bottom" src="/public/rain.jpg" />
-  <img class="top" style="opacity:{{calc.ratio(getUserInput.standardizeText(getUserInput.text))}}" src="/public/sun.jpg" />
+  <img class="top" style="opacity:{{calc.opacityRatio(getUserInput.standardizeText(getUserInput.text))}}" src="/public/sun.jpg" />
 </div>
+</container>
 </body>
 </html>

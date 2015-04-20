@@ -1,27 +1,27 @@
 var app = angular.module('happyOrSad');
 
-app.service('calc', function(){
+app.service('calc', function() {
 	var self = this;
 	self.sadWords = ["disappointed", "miserable", "sad", "sorrow", "unhappy"];
 	self.happyWords = ["delight", "delighted", "delightful", "happy", "glad", "joy", "joyful", "merry", "pleasant"]
 
-	self.individualWordCount = function(text, identifier){
+	self.individualWordCount = function(text, identifier) {
 		var count = 0;
-		_.each(text, function(word){
+		_.each(text, function(word) {
 			if(word == identifier) count++;
 		});
 		return count
 	};
 
-	self.totalWordCount = function(text, listOfWords){
+	self.totalWordCount = function(text, listOfWords) {
 		var totalCount = 0;
-		_.each(listOfWords, function(word){
+		_.each(listOfWords, function(word) {
 			totalCount = totalCount + self.individualWordCount(text, word);
 		});
 		return totalCount;
 	};
 
-	self.happyOrSad = function(text){
+	self.happyOrSad = function(text) {
 		if(self.totalWordCount(text, self.happyWords) == self.totalWordCount(text, self.sadWords)) {
 			return "Unknown";
 		}
@@ -34,19 +34,28 @@ app.service('calc', function(){
 		else { return "Unknown" };
 	};
 
-	self.isHappy = function(text){
-		if(self.happyOrSad(text) == "Happy"){
+	self.isHappy = function(text) {
+		if(self.happyOrSad(text) == "Happy") {
 			return true;
 		};
 	};
 
-	self.isSad = function(text){
-		if(self.happyOrSad(text) == "Sad"){
+	self.isSad = function(text) {
+		if(self.happyOrSad(text) == "Sad") {
 			return true;
 		};
 	};
 
-	self.ratio = function(text){
+	self.ratio = function(text) {
 		return self.totalWordCount(text, self.happyWords) / (self.totalWordCount(text, self.sadWords)+self.totalWordCount(text, self.happyWords))
+	};
+
+	self.opacityRatio = function(text){
+		if(self.ratio(text) !== self.ratio(text) ) {
+			return 0.5;
+		}
+		else { 
+			return self.ratio(text);
+		};
 	};
 });

@@ -2,6 +2,10 @@ body {
 	
 }
 
+img {
+  opacity: 0.5;
+}
+
 #cf {
   position:relative;
   height:100px;
