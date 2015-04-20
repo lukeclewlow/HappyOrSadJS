@@ -1,7 +1,7 @@
 describe('user visiting the homepage: ', function() {
 
 	beforeEach(function() {
-		browser.get('/');
+		browser.get('/app');
 	});
 
 	it('can see the page title', function() {

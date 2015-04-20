@@ -68,7 +68,8 @@ module.exports = function(grunt) {
         options: {
           livereload: 35729,
           open: true,
-          base: ['']
+          base: ['app'],
+          keepAlive: true
           
         }
       },

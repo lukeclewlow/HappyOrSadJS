@@ -3,7 +3,7 @@ exports.config = {
   directConnect: true,
   chromeOnly: true,
   chromeDriver: './node_modules/protractor/selenium/chromedriver',
-  baseUrl: 'http://localhost:8080/',
+  baseUrl: 'http://localhost:8080/app',
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
