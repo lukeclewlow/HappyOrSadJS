@@ -29,7 +29,9 @@ Technologies
 My Approach
 -----------
 
-I started by thinking about the different elements that would need to make up this app and how these might be seperated. I began writing the app in Ruby, but I wanted an interface which would update dynamically when the user was typing, so I decided to use Angular. I had also just started to learn this framework so saw it as a learning experience to try and understand Angular testing frameworks more fully.
+I started by thinking about the different elements that would need to make up this app and how these might be seperated. I intially thought about coding the app in Ruby as this is the language I am most comfortable with, but I wanted an interface which would update dynamically when the user was typing, so I decided it would be much more straight forward in the long run to use Angular. I had also just started to learn this framework so saw it as a further learning experience to try and understand Angular testing frameworks more fully.
+
+I have seperated my business logic into 2 services, which effectively equate to classes.	
 
 
 
