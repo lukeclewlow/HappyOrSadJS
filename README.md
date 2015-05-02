@@ -2,6 +2,13 @@
 
 ### An Angular app to evaluate your text and tell you if it's happy or sad!
 
+The Brief
+---------
+From a given 'dictionary' of words, create an app that can tell the user whether the text they have entered is 50% more happy than sad or vicce versa. If it is neither the result is 'Unknown'!
+
+To Run
+------
+
 To run the app, open the root directory, and type into console: 
 
 `npm install`
